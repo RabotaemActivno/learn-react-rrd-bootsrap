@@ -15,7 +15,7 @@ function App() {
           <Route path='/' element={<Main/>} />
           <Route path='/about' element={<About/>} />
           <Route exact path='/users' element={<Users/>} />
-          <Route path='/users/:userName' element={<UserId userNamee={'huy poymi'}/>} />
+          <Route path='/users/:id' element={<UserId/>} />
           <Route path='*' element={<Error/>}/>
         </Routes>
       </Router>

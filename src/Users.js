@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { UserId } from './UserId';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Users.css'
 
@@ -21,7 +20,7 @@ export function Users() {
                 {
                     users.map(user => {
                         return (
-                            <li className="list-group-item" key={user.id}><a href={`/users/${user.name.split(' ').join('_')}`} className="nav-link">{user.username}</a></li>
+                            <li className="list-group-item" key={user.id}><a href={`/users/${user.id}`} className="nav-link">{user.username}</a></li>
                         )
                     })
                 }
