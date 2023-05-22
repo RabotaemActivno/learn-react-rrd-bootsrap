@@ -7,10 +7,21 @@ export function Users() {
     const [users, setUsers] = useState([])
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(res => res.json())
-            .then(json => setUsers(json))
-            .catch(error => console.error(error, 'ошибка fetch-запроса'))
+        const dataFetch = async () => {
+            const data = await (
+                await fetch (
+                    'https://jsonplaceholder.typicode.com/users'
+                )
+            ).json();
+
+            setUsers(data);
+        };
+
+        dataFetch();
+        // fetch('https://jsonplaceholder.typicode.com/users')
+        //     .then(res => res.json())
+        //     .then(json => setUsers(json))
+        //     .catch(error => console.error(error, 'ошибка fetch-запроса'))
     }, [])
 
     return (
